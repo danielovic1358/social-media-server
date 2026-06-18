@@ -2,19 +2,17 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class PostService {
-  private postInformation = [
-    {
-      id: 1,
-      description: "Ich war am Gardasee!",
-      imageURL: 'http://localhost:3000/pictureposts/test1.jpg',
-    }
-  ]
-
-  findAll() {
-    return this.postInformation
+  private socialplatform = {
+    posts: [
+      {postid: 1, postcaption: "Ich war am Gardasee.", imageURL: 'http://localhost:3000/pictureposts/post1.jpg'},
+      {postid: 2, postcaption: "Schöner Sonnenuntergang.", imageURL: 'http://localhost:3000/pictureposts/post2.jpg'}
+    ],
+    accounts: [
+      {accountid: 1, accountname: "@holgerpodowski", accountURL: 'http://localhost:3000/pictureposts/account1.png'}
+    ]
   }
 
-  findOne(id: number) {
-    return this.postInformation.find(post => post.id === id);
+  getPosts() {
+    return this.socialplatform
   }
 }
