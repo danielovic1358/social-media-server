@@ -1,10 +1,10 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { HydratedDocument } from 'mongoose';
 
-export type PostDocument = HydratedDocument<Accounts>;
+export type AccountDocument = HydratedDocument<Account>;
 
 @Schema()
-export class Accounts {
+export class Account {
   @Prop()
   accountid: number;
 
@@ -15,4 +15,4 @@ export class Accounts {
   profileURL: string;
 }
 
-export const PostSchema = SchemaFactory.createForClass(Accounts);
+export const AccountSchema = SchemaFactory.createForClass(Account);
