@@ -17,8 +17,8 @@ export class AccountController {
     return this.AccountService.findAll();
   }
 
-  @Delete('_id')
-  remove(@Param('_id') id: string) {
-    return this.AccountService.remove(id)
+  @Delete()
+  removeAll() {
+    return this.AccountService.removeAll()
   }
 }

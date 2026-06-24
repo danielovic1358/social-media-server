@@ -17,7 +17,7 @@ export class AccountService {
     return this.postModel.find().exec();
   }
 
-  async remove(id: string) {
-    return this.postModel.findByIdAndDelete(id)
+  async removeAll() {
+    return this.postModel.deleteMany()
   }
 }

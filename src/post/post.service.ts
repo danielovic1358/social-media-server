@@ -16,4 +16,8 @@ export class PostService {
   async findAll(): Promise<Post[]> {
     return this.postModel.find().exec();
   }
+
+  async removeAll() {
+    return this.postModel.deleteMany({})
+  }
 }

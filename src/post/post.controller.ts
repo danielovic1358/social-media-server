@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body } from '@nestjs/common';
+import { Controller, Get, Post, Body, Delete } from '@nestjs/common';
 import { PostService } from './post.service';
 import { CreatePostDto } from './dto/create-post.dto';
 import { Post as PostSchema } from '../schemas/post.schema';
@@ -15,5 +15,10 @@ export class PostController {
   @Get()
   findAll(): Promise<PostSchema[]> {
     return this.postService.findAll();
+  }
+
+  @Delete()
+  removeAll() {
+    return this.postService.removeAll()
   }
 }
